@@ -1,12 +1,15 @@
+import { useState } from "react";
 import { useMesesIPC } from "../hooks/useIPC";
 import IpcCard from "./IpcCard";
 import { Store } from "lucide-react";
 
-import { Section, SectionTitle, CardTitleIcon } from "@/components";
-
+import { Section, SectionTitle, CardTitleIcon, Modal } from "@/components";
 
 
 const IpcSection = () => {
+
+  const [isModalOpen, setIsModalOpen] = useState(false);
+
   const {
     data = [],
     isPending,
@@ -28,40 +31,55 @@ const IpcSection = () => {
   const ipc = data[data.length - 1];
   const others = data.slice(0, -1);
 
-  // A futuro abre un modal con el historial
-  const handleOpenHistory = () => {
-    alert("abrir modal");
+  // Abrir el modal
+  const handleOpenModal = () => {
+    setIsModalOpen(true);
   };
-  
+
+
   return (
-    
-    <Section id="ipc">
+    <>
+      {/* Contenido de la sección */}
+      <Section 
+        id="ipc"
+        className="cursor-pointer"
+        onClick={handleOpenModal}
+      >
 
-      <CardTitleIcon>
+        <CardTitleIcon>
 
-        <SectionTitle>INFLACIÓN MENSUAL</SectionTitle>
+          <SectionTitle>INFLACIÓN MENSUAL</SectionTitle>
 
-        <Store
-          strokeWidth={3}
-          className="icon-section text-[rgb(174,109,248)]"
-        />
+          <Store
+            strokeWidth={3}
+            className="icon-section text-[rgb(174,109,248)]"
+          />
 
-      </CardTitleIcon>
-      
-      <div className="flex gap-7 items-end">
+        </CardTitleIcon>
+        
+        <div className="flex gap-7 items-end">
 
-        {others.map((i) => (
-          <div className="flex-1" key={i.nombre_mes}>
-            <IpcCard data={i} />
+          {others.map((i) => (
+            <div className="flex-1" key={i.nombre_mes}>
+              <IpcCard data={i} />
+            </div>
+          ))}
+
+          <div className="flex-[1.3]">
+            <IpcCard data={ipc} variant="featured" />
           </div>
-        ))}
 
-        <div className="flex-[1.3]">
-          <IpcCard data={ipc} variant="featured" />
         </div>
+      </Section>
 
-      </div>
-    </Section>
+      {/* Contenido del modal */}
+      <Modal
+        isOpen={isModalOpen}
+        onClose={() => setIsModalOpen(false)}
+      >
+        <h1>Abri el modal</h1>
+      </Modal>
+    </>
   );
 };
 

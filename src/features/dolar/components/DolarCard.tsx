@@ -53,7 +53,7 @@ const DolarCard = ({ data, variant = "default" }: DolarCardProps) => {
 
           <KeyComponent>VENTA</KeyComponent>
 
-          <ValueComponent> ${formatPrice(data.venta)} </ValueComponent>
+          <ValueComponent>${formatPrice(data.venta)}</ValueComponent>
 
         </div>
 

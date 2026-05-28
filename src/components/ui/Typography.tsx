@@ -9,53 +9,53 @@ interface Props {
 
 export const SectionTitle = ({ children, className }: Props) => {
   return (
-    <h3
+    <div
       className={cn(
         "text-2xl text-[#ffffff] font-bold",
         className
       )}
     >
       {children}
-    </h3>
+    </div>
   );
 };
 
 export const CardTitle = ({ children, className }: Props) => {
   return (
-    <h3
+    <div
       className={cn(
         "font-bold text-[#ffffff] text-[1.3rem]",
         className
       )}
     >
       {children}
-    </h3>
+    </div>
   );
 };
 
 export const CardTitleIcon = ({ children, className }: Props) => {
   return (
-    <h3
+    <div
       className={cn(
         "flex justify-between mb-6",
         className
       )}
     >
       {children}
-    </h3>
+    </div>
   );
 };
 
 export const CardTitleSecond = ({ children, className }: Props) => {
   return (
-    <h3
+    <div
       className={cn(
         "font-bold text-[#ffffff] text-[1.1rem]",
         className
       )}
     >
       {children}
-    </h3>
+    </div>
   );
 };
 

@@ -23,7 +23,7 @@ const IpcCard = ({ data, variant = "default", onClick }: IpcProps) => {
 
   return (
     <Card
-      className="flex flex-col items-center "
+      className="flex flex-col items-center"
       onClick={onClick}
       variant={!isDefault ? "ipc" : "default"}
     >

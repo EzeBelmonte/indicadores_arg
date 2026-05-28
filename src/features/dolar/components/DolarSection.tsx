@@ -30,7 +30,7 @@ const DolarSection = () => {
 
   return (
 
-    <Section id="dolar" className="scroll-mt-24">
+    <Section id="dolar">
 
       <CardTitleIcon>
 
