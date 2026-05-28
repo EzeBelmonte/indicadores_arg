@@ -1,12 +1,14 @@
 import { useEffect } from "react";
 import { createPortal } from "react-dom";
 import { AnimatePresence, motion } from "framer-motion";
+import Button from "./Button";
 
 type ModalProps = {
   isOpen: boolean;
   onClose: () => void;
   children: React.ReactNode;
 };
+
 
 const Modal = ({
   isOpen,
@@ -73,9 +75,9 @@ const Modal = ({
           <motion.div
             className="
               relative
-              w-full max-w-2xl
+              w-full max-w-6xl h-[90vh]
               rounded-2xl
-              bg-white
+              bg-[rgba(32,36,37,0.88)]
               p-6
               shadow-2xl
             "
@@ -101,18 +103,24 @@ const Modal = ({
             }}
           >
 
-            <button
-              onClick={onClose}
-              className="
-                absolute right-4 top-4
-                text-2xl text-gray-500
-                hover:text-black
-              "
-            >
-              ✕
-            </button>
+            <div className="mb-10">
 
-            {children}
+              <Button
+                onClick={onClose}
+                className="
+                  absolute right-4 top-4
+                  text-2xl text-gray-500
+                  hover:text-black cursor-pointer
+                "
+              >
+                ✕
+              </Button>
+
+            </div>
+
+            <div>
+              {children}
+            </div>
 
           </motion.div>
 

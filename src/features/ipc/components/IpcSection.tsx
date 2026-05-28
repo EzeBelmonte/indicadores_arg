@@ -4,6 +4,7 @@ import IpcCard from "./IpcCard";
 import { Store } from "lucide-react";
 
 import { Section, SectionTitle, CardTitleIcon, Modal } from "@/components";
+import IpcHistorial from "./IpcHistorial";
 
 
 const IpcSection = () => {
@@ -77,7 +78,9 @@ const IpcSection = () => {
         isOpen={isModalOpen}
         onClose={() => setIsModalOpen(false)}
       >
-        <h1>Abri el modal</h1>
+
+        <IpcHistorial />
+        
       </Modal>
     </>
   );

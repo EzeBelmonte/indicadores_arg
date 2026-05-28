@@ -31,6 +31,10 @@
   }
 }
 
+/* Esto le quita el remarco negro que se le hace al grafico al hacerle clic */
+.recharts-wrapper *:focus {
+  outline: none !important;
+}
 
 /* Esto respeta usuarios que desactivan animaciones en el sistema operativo */
 @media (prefers-reduced-motion: reduce) {

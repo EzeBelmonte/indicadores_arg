@@ -1,5 +1,5 @@
 import { useQuery } from "@tanstack/react-query";
-import { getUltimosMesesIPC } from "../services/ipc.service";
+import { getUltimosMesesIPC, getUltimosAniosIPC } from "../services/ipc.service";
 
 
 export const useMesesIPC = () => {
@@ -11,11 +11,11 @@ export const useMesesIPC = () => {
   });
 };
 
-/*export const useAniosIPC = () => {
+export const useAniosIPC = () => {
   return useQuery({
 
     queryKey: ["ipc", "historical"],
     queryFn: getUltimosAniosIPC,
 
   });
-};*/
+};

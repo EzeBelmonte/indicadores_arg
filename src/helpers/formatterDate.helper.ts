@@ -34,10 +34,7 @@ export const lastYears = (years: number ) => {
   const currentMonth = currentDate.getMonth() + 1;
 
   // Cantidad de años a mostrar
-  const YEARS_BACK = years;
-
-  // Año inicial fijo durante todo el año actual
-  const startYear = currentYear - YEARS_BACK;
+  const startYear = currentYear - years;
 
   const from = `${startYear}-01`;
   const to = `${currentYear}-${String(currentMonth).padStart(2, "0")}`;
