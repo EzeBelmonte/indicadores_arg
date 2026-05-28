@@ -1,0 +1,58 @@
+@import "tailwindcss";
+
+@layer base {
+
+  body {
+    @apply bg-fixed bg-linear-[-10deg] from-[#32118d] to-[#020e2e]; /* 0f0f0f */
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+
+}
+
+@layer components {
+  .section-hover {
+    @apply transition-all duration-300 ease-out
+    hover:-translate-y-1
+    border border-transparent
+    hover:border-white/5
+    hover:shadow-[0_4px_20px_rgba(66,146,235,0.3)];
+  }
+
+  .card-hover {
+    @apply transition-all duration-300
+    hover:-translate-y-1
+  }
+
+  .icon-section {
+    @apply bg-[#3d3a3a] rounded-[7px] w-7.5 h-7.5 p-1 opacity-60 border border-white/30
+  }
+}
+
+
+/* Esto respeta usuarios que desactivan animaciones en el sistema operativo */
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+}
+
+/* 
+Para definir mis clases se hacen en diferentes lugares dependiendo para que sea:
+@layer base {} → estilos globales HTML (Para cosas que afectan tags directamente.)
+
+@layer components {} → clases reutilizables (Acá van todas  las clases custom semánticas: 
+                                                                                        .card-hover { ... }
+                                                                                        .glass-card { ... }
+                                                                                        .btn-primary { ... }
+                                                                                        .section-container { ... }
+                                                                                        )
+
+@layer utilities {} → helpers atómicos muy específicos ( Para mini utilidades que no existen en Tailwind. Ej:
+                                                                                        .text-shadow {
+                                                                                          text-shadow: 0 2px 8px rgba(0,0,0,.3);
+                                                                                        }
+                                                                                      )
+*/
