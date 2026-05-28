@@ -8,7 +8,8 @@ const months = lastMonths(3);
 
 
 // Indicamos cuantos años queremos ver (4 = desde la fecha actual hasta 4 años completos atras, etc...)
-const years = lastYears(4);
+// Argly soporta hasta 3 años atras
+const years = lastYears(3);
 
 export const getUltimosMesesIPC = async (): Promise<IPCData[]> => {
 
