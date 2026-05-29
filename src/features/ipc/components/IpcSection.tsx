@@ -77,6 +77,7 @@ const IpcSection = () => {
       <Modal
         isOpen={isModalOpen}
         onClose={() => setIsModalOpen(false)}
+        title="IPC"
       >
 
         <IpcHistorial />

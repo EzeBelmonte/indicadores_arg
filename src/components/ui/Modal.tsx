@@ -1,12 +1,13 @@
 import { useEffect } from "react";
 import { createPortal } from "react-dom";
 import { AnimatePresence, motion } from "framer-motion";
-import Button from "./Button";
+import { Button } from "../../components"
 
 type ModalProps = {
   isOpen: boolean;
   onClose: () => void;
   children: React.ReactNode;
+  title?: string;
 };
 
 
@@ -14,6 +15,7 @@ const Modal = ({
   isOpen,
   onClose,
   children,
+  title,
 }: ModalProps) => {
 
   // Bloquear scroll
@@ -75,11 +77,11 @@ const Modal = ({
           <motion.div
             className="
               relative
-              w-full max-w-6xl h-[90vh]
-              rounded-2xl
+              w-full max-w-7xl h-[90vh]
+              rounded
               bg-[rgba(32,36,37,0.88)]
-              p-6
-              shadow-2xl
+              px-6 pb-6 pt-4
+              shadow-2xl overflow-y-auto
             "
             onClick={(e) => e.stopPropagation()}
             initial={{
@@ -104,13 +106,15 @@ const Modal = ({
           >
 
             <div className="mb-10">
+              
+              <h3 className="text-3xl font-bold text-white">{title}</h3>
 
               <Button
                 onClick={onClose}
                 className="
                   absolute right-4 top-4
                   text-2xl text-gray-500
-                  hover:text-black cursor-pointer
+                  hover:text-[#c96464] cursor-pointer
                 "
               >
                 ✕

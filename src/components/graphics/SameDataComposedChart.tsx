@@ -1,41 +1,48 @@
 import {
   ResponsiveContainer, ComposedChart, Line, Bar,
-  XAxis,YAxis, CartesianGrid, Tooltip, LabelList 
+  XAxis,YAxis, CartesianGrid, LabelList 
 } from "recharts";
 
-import type { IPCData } from "@/features/ipc/types/ipc.type";
+import { cn } from "@/utils/cn";
+import { useHorizontalDragScroll } from "@/hooks/useHorizontalDragScroll";
 
-interface ChartProps {
-  data: IPCData[];
+type ChartProps = {
+  data: any[];
+  className?: string;
 }
 
 
+export default function Chart({ data, className }: ChartProps) {
 
-export default function Chart({ data }: ChartProps) {
+  const {
+    scrollRef,
+    isDragging,
+    dragHandlers,
+  } = useHorizontalDragScroll();
   
-  // Armamos el arreglo
-  const historial = data.map((i) => ({
-    fecha: i.nombre_mes + "/" + i.anio,
-    valor: i.valor
-  }));
-
   // Ancho dinámico
-  const charWidth = Math.max(historial.length * 80, 800);
+  const charWidth = Math.max(data.length * 80, 800);
+
 
   return (
 
     <div 
-      className="w-full overflow-x-auto"
-      onWheel={(e) => {
-        e.currentTarget.scrollLeft += e.deltaY;
-      }}
+      ref={scrollRef}
+      className={cn(
+        "w-full overflow-x-auto overscroll-x-contain select-none",
+        isDragging
+          ? "cursor-grabbing"
+          : "cursor-grab",
+        className
+      )}
+      {...dragHandlers}
     >
 
       <div style={{ width: charWidth, height: 400 }}>
 
         <ResponsiveContainer width="100%" height="100%">
           <ComposedChart 
-            data={historial}
+            data={data}
             margin={{
               top: 20,
               right: 0,
@@ -59,8 +66,10 @@ export default function Chart({ data }: ChartProps) {
             />
 
             <YAxis stroke="rgb(255,255,255)" />
+            
+            {/* Cartelito que aparece al poner el mouse sobre las barras */}
+            {/* <Tooltip /> */}
 
-            <Tooltip />
             {/* <Legend /> */}
 
             {/* Barras */}
