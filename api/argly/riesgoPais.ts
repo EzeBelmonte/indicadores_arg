@@ -10,12 +10,17 @@ export default async function handler(
 
     const option = "riesgo-pais";
 
-    const { anterior } = req.query;
+    const { anterior, desde, hasta } = req.query;
 
     const searchParams = new URLSearchParams();
 
     if (anterior === "true") {
       searchParams.append("anterior", "true");
+    }
+
+    if (typeof desde === "string" && typeof hasta === "string") {
+      searchParams.append("desde", desde);
+      searchParams.append("hasta", hasta);
     }
 
     const query = searchParams.toString();
@@ -27,6 +32,7 @@ export default async function handler(
     const data = await fetchExternal(url, "Error consultando API externa");
 
     return sendResponse(res, data);
+
   } catch (error) {
 
     return res.status(500).json({

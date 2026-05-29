@@ -54,7 +54,7 @@ const Navbar = () => {
         <img
           src={logoNav}
           alt="Logo"
-          className="w-48 md:w-64 lg:w-40 h-auto"
+          className="w-30 md:w-30 lg:w-30 h-auto"
         />
 
         <ul className="flex font-bold text-[0.9rem] gap-6 py-4">

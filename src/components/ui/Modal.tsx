@@ -112,7 +112,7 @@ const Modal = ({
               <Button
                 onClick={onClose}
                 className="
-                  absolute right-4 top-4
+                  absolute right-6 top-4
                   text-2xl text-gray-500
                   hover:text-[#c96464] cursor-pointer
                 "

@@ -1,11 +1,16 @@
+import { useState } from "react";
 import { useRiesgoPais } from "../hooks/useRiesgoPais";
 import { TriangleAlert } from "lucide-react";
 
+import { Section, SectionTitle, CardTitleIcon, Modal } from "@/components";
 import RiesgoPaisCard from "./RiesgoPaisCard";
-import { Section, SectionTitle, CardTitleIcon } from "@/components";
+import RiesgoPaisHistorial from "./RiesgoPaisHistorial";
 
 
 const RiskCountrySection = () => {
+
+  const [isModalOpen, setIsModalOpen] = useState(false);
+
   const {
     data,
     isPending,
@@ -31,42 +36,51 @@ const RiskCountrySection = () => {
     return <p>No hay datos del riesgo país de ayer</p>
   }
 
-  // A futuro abre un modal con el historial
-  const handleOpenHistory = () => {
-    alert("abrir modal");
+  // Abrir el modal
+  const handleOpenModal = () => {
+    setIsModalOpen(true);
   };
+
 
   return (
 
-    <Section id="riesgo-pais">
+    <>
+    
+      {/* Contenido de la sección */}
+      <Section 
+        id="riesgo-pais"
+        className="cursor-pointer"
+        onClick={handleOpenModal}
+      >
 
-      <CardTitleIcon>
+        <CardTitleIcon>
 
-        <SectionTitle>RIESGO PAÍS</SectionTitle>
+          <SectionTitle>RIESGO PAÍS</SectionTitle>
 
-        {/* Historial */}
-        {/*<Button 
-          onClick={handleOpenHistory}
-          className="cursor-pointer"
-        >
-          <ButtonHistorial>HISTORIAL</ButtonHistorial>
-        </Button>*/}
+          <TriangleAlert
+            strokeWidth={3}
+            className="icon-section text-[rgb(247,61,61)]"
+          />
 
-        <TriangleAlert
-          strokeWidth={3}
-          className="icon-section text-[rgb(247,61,61)]"
+        </CardTitleIcon>
+
+        {/* Riesgo país actual y anterior*/}
+        <RiesgoPaisCard
+          current={riesgoPaisActual}
+          previous={riesgoPaisAnterior}
         />
 
-      </CardTitleIcon>
+      </Section>
 
-      {/* Riesgo país actual y anterior*/}
-      <RiesgoPaisCard
-        current={riesgoPaisActual}
-        previous={riesgoPaisAnterior}
-      />
-
-    </Section>
-    
+      {/* Contenido del modal */}
+      <Modal
+        isOpen={isModalOpen}
+        onClose={() => setIsModalOpen(false)}
+        title="RIESGO PAIS"
+      >
+        <RiesgoPaisHistorial/>
+      </Modal>
+    </>
   );
 };
 

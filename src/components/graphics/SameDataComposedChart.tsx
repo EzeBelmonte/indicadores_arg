@@ -9,20 +9,27 @@ import { useHorizontalDragScroll } from "@/hooks/useHorizontalDragScroll";
 type ChartProps = {
   data: any[];
   className?: string;
+  paramKey: string;
+  paramValue: string;
+  suffix?: "porcentaje" | "puntos";
 }
 
 
-export default function Chart({ data, className }: ChartProps) {
+export default function Chart({ data, className, paramKey, paramValue, suffix }: ChartProps) {
 
   const {
     scrollRef,
     isDragging,
     dragHandlers,
   } = useHorizontalDragScroll();
+
+  const formatted = {
+    porcentaje: "%",
+    puntos: "\u00A0pts.",
+  }
   
   // Ancho dinámico
-  const charWidth = Math.max(data.length * 80, 800);
-
+  const charWidth = Math.max(data.length * 95, 800);
 
   return (
 
@@ -57,7 +64,7 @@ export default function Chart({ data, className }: ChartProps) {
             />
 
             <XAxis
-              dataKey="fecha"
+              dataKey={paramKey}
               angle={-45}
               textAnchor="end"
               height={90}
@@ -74,25 +81,30 @@ export default function Chart({ data, className }: ChartProps) {
 
             {/* Barras */}
             <Bar 
-              dataKey="valor" 
+              dataKey={paramValue} 
               fill="rgba(85,26,151,0.8)" 
               barSize={20}
-              tabIndex={-1}
+              //tabIndex={-1}
             >
               {/* Agrega valor a las barras */}
               <LabelList 
-                dataKey="valor"
+                dataKey={paramValue}
                 position="top"
                 fill="rgb(255,255,255)"
                 fontSize={16}
                 fontWeight={500}
+                formatter={(value) =>
+                  suffix
+                    ? `${value}${formatted[suffix]}`
+                    : value
+                }
               />
             </Bar>
 
             {/* Linea que toca las barras */}
             <Line
               type="monotone"
-              dataKey="valor"
+              dataKey={paramValue}
               stroke="#ff7300"
             />
 

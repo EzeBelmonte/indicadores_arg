@@ -6,12 +6,11 @@ import { apiFetcher } from "@/shared/lib/apiFetcher";
 // Indicamos cuantos meses quiero ver (1 = un mes, 2 = dos meses, etc...)
 const months = lastMonths(3);
 
-
 // Indicamos cuantos años queremos ver (4 = desde la fecha actual hasta 4 años completos atras, etc...)
 // Argly soporta hasta 3 años atras
 const years = lastYears(3);
 
-export const getUltimosMesesIPC = async (): Promise<IPCData[]> => {
+export const getIPC = async (): Promise<IPCData[]> => {
 
   const params = new URLSearchParams({
     desde: months.from,
@@ -30,7 +29,7 @@ export const getUltimosMesesIPC = async (): Promise<IPCData[]> => {
 
 };
 
-export const getUltimosAniosIPC = async (): Promise<IPCData[]> => {
+export const getIPCHistorial = async (): Promise<IPCData[]> => {
 
   const params = new URLSearchParams({
     desde: years.from,

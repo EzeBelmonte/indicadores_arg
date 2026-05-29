@@ -1,9 +1,9 @@
 import { useState } from "react";
-import { useMesesIPC } from "../hooks/useIPC";
-import IpcCard from "./IpcCard";
+import { useIPC } from "../hooks/useIPC";
 import { Store } from "lucide-react";
 
 import { Section, SectionTitle, CardTitleIcon, Modal } from "@/components";
+import IpcCard from "./IpcCard";
 import IpcHistorial from "./IpcHistorial";
 
 
@@ -15,7 +15,7 @@ const IpcSection = () => {
     data = [],
     isPending,
     error,
-  } = useMesesIPC();
+  } = useIPC();
 
   if (isPending) {
     return <p>Cargando...</p>;
@@ -40,6 +40,7 @@ const IpcSection = () => {
 
   return (
     <>
+    
       {/* Contenido de la sección */}
       <Section 
         id="ipc"

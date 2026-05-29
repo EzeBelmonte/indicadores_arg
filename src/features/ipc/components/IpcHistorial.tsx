@@ -1,6 +1,6 @@
-import { useAniosIPC } from "../hooks/useIPC";
+import { useIPCHistorial } from "../hooks/useIPC";
 import { SameData, CardTitleSecond } from "@/components";
-import { cn } from "@/utils/cn";
+
 
 interface HistorialItem {
   fecha: string;
@@ -12,6 +12,11 @@ interface Anual {
   valor: number;
 }
 
+interface Inter {
+  fecha: string;
+  valor: number;
+}
+
 
 const IpcHistorial = () => {
 
@@ -19,7 +24,7 @@ const IpcHistorial = () => {
     data = [],
     isPending,
     error,
-  } = useAniosIPC();
+  } = useIPCHistorial();
 
   if (isPending) {
     return <p>Cargando...</p>;
@@ -33,11 +38,13 @@ const IpcHistorial = () => {
     return <p>No hay datos</p>;
   }
 
+
   // Armamos el arreglo para el historial de inflacion
   const historial: HistorialItem[] = [];
-  
-  // Armarmos el arreglo para guardar la interanual
+  // Armarmos el arreglo para guardar la ANUAL
   const anual: Anual[] = [];
+  // Armarmos el arreglo para guardar la INTERANUAL
+  const inter: Inter[] = [];
 
   // Guardamos el primer anio
   let controlYear  = data[0].anio;
@@ -45,6 +52,13 @@ const IpcHistorial = () => {
 
   data.forEach((i, index) => {
 
+    // ====================== HISTORIAL
+    historial.push({
+      fecha: `${i.nombre_mes}/${i.anio}`,
+      valor: i.valor,
+    })
+
+    // ====================== ACUMULADA
     // Acumulamos inflación mensual
     accumulated *= 1 + i.valor / 100;
 
@@ -61,69 +75,72 @@ const IpcHistorial = () => {
       controlYear = nextItem?.anio;
       accumulated = 1;
     }
-    
-    historial.push({
-      fecha: `${i.nombre_mes}/${i.anio}`,
-      valor: i.valor,
-    })
 
+    // ====================== INTERANUAL
+    if (index >= 11) {
+
+      let interAccumulated = 1;
+
+      for (let j = index - 11; j <= index; j++) {
+        interAccumulated *= 1 + data[j].valor/ 100;
+      }
+
+      inter.push({
+        fecha: `${i.nombre_mes}/${i.anio}`,
+        valor: Number(((interAccumulated - 1) * 100).toFixed(2)),
+      });
+
+    }
   });
 
   // Estilo en comun de los textos
-  const textStyle = "text-white font-semibold me-1";
+  const grapContainer = "bg-[rgba(255,255,255,0.03)] rounded px-3 py-5";
 
-  const currentYear = new Date().getFullYear();
 
   return (
 
-    <>
+    <div className="flex flex-col gap-12">
 
-      <div className="mb-8">
-
-        {anual.map((i) => {
-          const isCurrentYear = i.anio === currentYear;
-
-          return (
-            <div key={i.anio} className={cn(
-              "w-80 flex items-baseline px-2 py-1",
-              isCurrentYear 
-                ? "bg-[rgba(255,255,255,0.03)] rounded border border-white/10"
-                : ""
-            )}>
-                
-              <div className="flex">
-
-                <p className={textStyle}>
-                  {isCurrentYear
-                    ? "ACUMULADA"
-                    : "INFLACIÓN ANUAL EN"}
-                </p>
-
-                <p className={textStyle}>
-                  {i.anio}:
-                </p>
-
-              </div>
-
-              <p className="text-[rgb(160,73,241)] text-[1.1rem] font-bold ml-auto">
-                {i.valor}%
-              </p>
-
-            </div>
-          );
-        })}
-
-      </div>
-
-      <div className="bg-[rgba(255,255,255,0.03)] rounded px-3 py-5">
+      {/* Gráfico del historial */}
+      <div className={grapContainer}>
         
-        <CardTitleSecond className="mb-4">HISTORIAL (3 AÑOS)</CardTitleSecond>
-
-        <SameData data={historial} />
+        <CardTitleSecond className="mb-4">HISTORIAL</CardTitleSecond>
+        <SameData
+          paramKey="fecha"
+          paramValue="valor"
+          data={historial}
+          suffix="porcentaje"
+        />
       
       </div>
 
-    </>
+      {/* Gráfico del interanual */}
+      <div className={grapContainer}>
+        
+        <CardTitleSecond className="mb-4">INTERANUAL</CardTitleSecond>
+        <SameData 
+          paramKey="fecha" 
+          paramValue="valor" 
+          data={inter} 
+          suffix="porcentaje"
+        />
+      
+      </div>
+
+      {/* Gráfico del anual */}
+      <div className={grapContainer}>
+        
+        <CardTitleSecond className="mb-4">ANUAL</CardTitleSecond>
+        <SameData 
+          paramKey="anio" 
+          paramValue="valor"
+          data={anual} 
+          suffix="porcentaje"
+        />
+      
+      </div>
+
+    </div>
 
   );
 };

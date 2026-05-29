@@ -25,7 +25,7 @@ export const lastMonths = (mouthsAgo: number) => {
 
 };
 
-// Devuelve fechas desde la actual hasta X años atras
+// Devuelve fechas AAAA-MM
 export const lastYears = (years: number ) => {
 
   const currentDate = new Date();
@@ -33,17 +33,23 @@ export const lastYears = (years: number ) => {
   const currentYear = currentDate.getFullYear();
   const currentMonth = currentDate.getMonth() + 1;
 
-  // Cantidad de años a mostrar
-  const startYear = currentYear - years;
-
-  const from = `${startYear}-01`;
-  const to = `${currentYear}-${String(currentMonth).padStart(2, "0")}`;
-
-  return { 
-    from, 
-    to
+  return {
+    from: `${currentYear - years}-01`,
+    to: `${currentYear}-${String(currentMonth).padStart(2, "0")}`,
   };
 
+};
+
+// Devuelve fechas AAAA-MM-DD
+export const lastCompleteYears = (years: number) => {
+  const currentDate = new Date();
+
+  const currentYear = currentDate.getFullYear();
+
+  return {
+    from: `${currentYear - years}-01-01`,
+    to: currentDate.toISOString().slice(0, 10),
+  };
 };
 
 // Devuelve el nombre del mes
