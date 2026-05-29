@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react"
 import { motion } from "motion/react";
+import logoNav from "@/assets/logo/logo.svg";
 
 
 const Navbar = () => {
@@ -32,7 +33,7 @@ const Navbar = () => {
         ? "rgba(255,255,255,0.7)"
         : "rgba(255,255,255,0.9)",*/
       backgroundColor: "rgb(50,51,53)",
-      color: "rgb(255,255,255)"
+      color: "rgb(255,255,255)",
       /*backdropFilter: isScrolled
         ? "blur(16px)"
         : "blur(0px)",*/
@@ -48,9 +49,15 @@ const Navbar = () => {
       border-b border-white/10
     "
     >
-      <nav className="max-w-7xl mx-auto h-full px-4 flex items-center justify-between">
+      <nav className="max-w-7xl h-full flex items-center px-4 gap-10">
 
-        <ul className="flex font-bold text-[0.9rem] gap-6 p-4">
+        <img
+          src={logoNav}
+          alt="Logo"
+          className="w-48 md:w-64 lg:w-40 h-auto"
+        />
+
+        <ul className="flex font-bold text-[0.9rem] gap-6 py-4">
 
           <li><a href="#dolar">DÓLAR</a></li>
           <li><a href="#ipc">IPC</a></li>

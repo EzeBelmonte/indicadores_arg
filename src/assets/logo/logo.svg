@@ -1,0 +1,55 @@
+<svg width="480" height="260" viewBox="0 0 480 260" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="argBlue" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#5AB2FF"/>
+      <stop offset="100%" stop-color="#8ED6FF"/>
+    </linearGradient>
+
+    <linearGradient id="argLine" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#fff45a"/>
+      <stop offset="100%" stop-color="#f7ff8e"/>
+    </linearGradient>
+
+    <linearGradient id="softWhite" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#FFFFFF"/>
+      <stop offset="100%" stop-color="#DDF4FF"/>
+    </linearGradient>
+
+    <filter id="blurGlow">
+      <feGaussianBlur stdDeviation="4" result="blur"/>
+      <feMerge>
+        <feMergeNode in="blur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+  </defs>
+
+  <!-- Barra lateral -->
+  <rect x="10" y="55" width="10" height="140" rx="5" fill="url(#argLine)"/>
+
+  <!-- Indicadores -->
+  <text
+    x="40"
+    y="120"
+    font-family="'Space Grotesk', 'Segoe UI', sans-serif"
+    font-size="60"
+    font-weight="900"
+    fill="url(#softWhite)"
+    letter-spacing="1">
+    INDICADORES
+  </text>
+
+  <!-- ARG -->
+  <text
+    x="40"
+    y="182"
+    font-family="'Space Grotesk', 'Segoe UI', sans-serif"
+    font-size="72"
+    font-weight="800"
+    fill="url(#argBlue)"
+    filter="url(#blurGlow)"
+    letter-spacing="6">
+    ARG
+  </text>
+
+</svg>
