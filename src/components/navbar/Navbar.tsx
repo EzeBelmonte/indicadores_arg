@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react"
 import { motion } from "motion/react";
 import logoNav from "@/assets/logo/logo.svg";
+import Image from "../ui/Image";
 
 
 const Navbar = () => {
@@ -51,14 +52,18 @@ const Navbar = () => {
     >
       <nav className="max-w-7xl h-full flex items-center px-4 gap-10">
 
-        <img
-          src={logoNav}
-          alt="Logo"
-          className="w-30 md:w-30 lg:w-30 h-auto"
-        />
+        <a href="#inicio">
+
+          <Image
+            src={logoNav}
+            alt="Logo"
+            className="w-30 md:w-30 lg:w-30 h-auto"
+          />
+          
+        </a>
 
         <ul className="flex font-bold text-[0.9rem] gap-6 py-4">
-
+  
           <li><a href="#dolar">DÓLAR</a></li>
           <li><a href="#ipc">IPC</a></li>
           <li><a href="#riesgo-pais">RIESGO PAÍS</a></li>

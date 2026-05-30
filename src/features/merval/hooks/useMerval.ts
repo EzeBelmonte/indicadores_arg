@@ -7,6 +7,8 @@ import {
   getIndustrialMerval,
   getTelecomMerval,
   getFinancialMerval,
+  getRealEstateAgroMerval,
+  getHoldingMerval,
 } from "../services/meval.service";
 
 export const useMerval = () => {
@@ -36,13 +38,16 @@ export const useMervalSector = () => {
 
       const [
         bankMerval, energyMerval, industrialMerval, 
-        telecomMerval, financialMerval
+        telecomMerval, financialMerval, realEstateAgro,
+        holding,
       ] = await Promise.all([
         getBankMerval(),
         getEnergyMerval(),
         getIndustrialMerval(),
         getTelecomMerval(),
-        getFinancialMerval(),
+        getFinancialMerval(),  
+        getRealEstateAgroMerval(),
+        getHoldingMerval(),
       ]);
 
       return [
@@ -65,6 +70,14 @@ export const useMervalSector = () => {
         {
           name: "FINANCIERO",
           data: sanitize(financialMerval),
+        },
+                {
+          name: "REAL ESTATE Y AGRO",
+          data: sanitize(realEstateAgro),
+        },
+                {
+          name: "HOLDING Y CONGLOMERADOS",
+          data: sanitize(holding),
         },
       ]
 

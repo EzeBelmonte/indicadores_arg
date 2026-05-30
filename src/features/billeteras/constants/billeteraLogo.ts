@@ -1,38 +1,41 @@
+
+const url = "/logos/billeteras";
+
 export const billeteraLogo = {
   naranjax: {
-    logo: "/logos/naranja_x.png",
+    logo: `${url}/naranja_x.png`,
   },
   uala: {
-    logo: "/logos/uala.png",
+    logo: `${url}/uala.png`,
   },
   personalpay: {
-    logo: "/logos/personal_pay.png",
+    logo: `${url}/personal_pay.png`,
   },
   n1u: {
-    logo: "/logos/n1u.png",
+    logo: `${url}/n1u.png`,
   },
   lemoncash: {
-    logo: "/logos/lemon.png",
+    logo: `${url}/lemon.png`,
   },
   letsbit: {
-    logo: "/logos/lb_finanzas.png",
+    logo: `${url}/lb_finanzas.png`,
   },
   claropay: {
-    logo: "/logos/claro_pay.png",
+    logo: `${url}/claro_pay.png`,
   },
   mercadopago: {
-    logo: "/logos/mercado_pago.png",
+    logo: `${url}/mercado_pago.png`,
   },
   prex: {
-    logo: "/logos/prex.png",
+    logo: `${url}/prex.png`,
   },
   ieb: {
-    logo: "/logos/ieb.png",
+    logo: `${url}/ieb.png`,
   },
   astropay: {
-    logo: "/logos/astropay.png",
+    logo: `${url}/astropay.png`,
   },
   cocos: {
-    logo: "/logos/cocos.png",
+    logo: `${url}/cocos.png`,
   },
 };

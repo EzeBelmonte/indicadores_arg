@@ -6,6 +6,7 @@ import {
   JubilacionSection,
   MervalSection,
   PobrezaSection,
+  PresentacionSection,
   RiesgoPaisSection,
   RipteSection,
   SalarioSection,
@@ -17,6 +18,8 @@ const Dashboard = () => {
   return (
 
     <main className="max-w-7xl mx-auto flex flex-col gap-10 px-4 py-6">
+
+      <PresentacionSection />
 
       <DolarSection />
 

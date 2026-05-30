@@ -1,6 +1,7 @@
 import { 
   MERVAL_TICKERS, BANK_TICKERS, ENERGY_TICKERS, INDUSTRIAL_TICKERS,
-  TELECOM_TICKERS, FINANCIALMARKET_TICKERS,
+  TELECOM_TICKERS, FINANCIALMARKET_TICKERS, REALSTATE_AGRO_TICKERS,
+  HOLDING_TICKERS,
 } from "../constants/mervalTickers";
 import type { MervalData } from "../types/merval.type";
 import { apiFetcher } from "@/shared/lib/apiFetcher";
@@ -24,7 +25,7 @@ export const getMerval = async (): Promise<MervalData[]> => {
 
 };
 
-// Merval principales
+// Bancos
 export const getBankMerval = async (): Promise<MervalData[]> => {
 
   const params = new URLSearchParams({
@@ -42,7 +43,7 @@ export const getBankMerval = async (): Promise<MervalData[]> => {
 
 };
 
-// Merval principales
+// Energía
 export const getEnergyMerval = async (): Promise<MervalData[]> => {
 
   const params = new URLSearchParams({
@@ -60,7 +61,7 @@ export const getEnergyMerval = async (): Promise<MervalData[]> => {
 
 };
 
-// Merval principales
+// Industrial
 export const getIndustrialMerval = async (): Promise<MervalData[]> => {
 
   const params = new URLSearchParams({
@@ -78,7 +79,7 @@ export const getIndustrialMerval = async (): Promise<MervalData[]> => {
 
 };
 
-// Merval principales
+// Telecom
 export const getTelecomMerval = async (): Promise<MervalData[]> => {
 
   const params = new URLSearchParams({
@@ -96,11 +97,47 @@ export const getTelecomMerval = async (): Promise<MervalData[]> => {
 
 };
 
-// Merval principales
+// Financiero
 export const getFinancialMerval = async (): Promise<MervalData[]> => {
 
   const params = new URLSearchParams({
     tickers: FINANCIALMARKET_TICKERS.join(","),
+  }).toString();
+
+  const response = await apiFetcher<MervalData[]>(
+    
+    "/api/yahoo/merval",
+    "Error obteniendo MERVAL",
+    params
+  );
+
+  return response;
+
+};
+
+// Real Estate y agro
+export const getRealEstateAgroMerval = async (): Promise<MervalData[]> => {
+
+  const params = new URLSearchParams({
+    tickers: REALSTATE_AGRO_TICKERS.join(","),
+  }).toString();
+
+  const response = await apiFetcher<MervalData[]>(
+    
+    "/api/yahoo/merval",
+    "Error obteniendo MERVAL",
+    params
+  );
+
+  return response;
+
+};
+
+// Holding y conglomerados
+export const getHoldingMerval = async (): Promise<MervalData[]> => {
+
+  const params = new URLSearchParams({
+    tickers: HOLDING_TICKERS.join(","),
   }).toString();
 
   const response = await apiFetcher<MervalData[]>(
