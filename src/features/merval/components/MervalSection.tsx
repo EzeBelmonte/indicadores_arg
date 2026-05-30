@@ -1,11 +1,15 @@
+import { useState } from "react";
 import { useMerval } from "../hooks/useMerval";
 import { TrendingUp } from "lucide-react";
 
+import { Section, SectionTitle, CardTitleIcon, Modal } from "@/components";
 import MervalCard from "./MervalCard";
-import { Section, SectionTitle, CardTitleIcon } from "@/components";
+import MervalSector from "./MervalSector";
 
 
 const MervalSection = () => {
+
+  const [isModalOpen, setIsModalOpen] = useState(false);
 
   const {
     data,
@@ -25,29 +29,54 @@ const MervalSection = () => {
     return <p>No hay datos del merval</p>;
   }
 
+  // Abrir el modal
+  const handleOpenModal = () => {
+    setIsModalOpen(true);
+  };
+
   return (
-    <Section id="merval">
 
-      <CardTitleIcon>
+    <>
+    
+      {/* Contenido de la sección */}
+      <Section 
+        id="merval"
+        className="cursor-pointer"
+        onClick={handleOpenModal}
+      >
+
+        <CardTitleIcon>
+          
+          <SectionTitle>MERVAL</SectionTitle>
+
+          <TrendingUp
+            strokeWidth={3}
+            className="icon-section text-[rgb(60,255,0)]"
+          />
+
+        </CardTitleIcon>
         
-        <SectionTitle>MERVAL</SectionTitle>
+        <div className="grid grid-cols-2 gap-7">
 
-        <TrendingUp
-          strokeWidth={3}
-          className="icon-section text-[rgb(60,255,0)]"
-        />
+          {data.map((item) => (
+            <MervalCard key={item.symbol} data={item} />
+          ))}
 
-      </CardTitleIcon>
+        </div>
+
+      </Section>
       
-      <div className="grid grid-cols-2 gap-7">
+      {/* Contenido del modal */}
+      <Modal
+        isOpen={isModalOpen}
+        onClose={() => setIsModalOpen(false)}
+        title="MERCADO"
+      >
 
-        {data.map((item) => (
-          <MervalCard key={item.symbol} data={item} />
-        ))}
-
-      </div>
-
-    </Section>
+        <MervalSector />
+        
+      </Modal>
+    </>
   );
 };
 

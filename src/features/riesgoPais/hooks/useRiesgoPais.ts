@@ -22,9 +22,11 @@ export const useRiesgoPais = () => {
         current: current,
         previous: previous,
       };
+
     },
 
     refetchInterval: 60000,
+    
   });
 };
 

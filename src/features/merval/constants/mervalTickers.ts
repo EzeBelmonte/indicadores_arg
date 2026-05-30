@@ -14,7 +14,7 @@ export const MERVAL_TICKERS = [
 ];
 
 // Bancos
-export const BANC_TICKERS = [
+export const BANK_TICKERS = [
   "GGAL.BA", // Grupo Financiero Galicia
   "BBAR.BA", // BBVA Argentina
   "BMA.BA",  // Banco Macro

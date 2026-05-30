@@ -84,6 +84,7 @@ const IpcSection = () => {
         <IpcHistorial />
         
       </Modal>
+      
     </>
   );
 };
