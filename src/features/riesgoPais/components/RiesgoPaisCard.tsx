@@ -3,7 +3,7 @@ import { Card, CardFooter, Key, Value } from "@/components";
 import { ArrowBigUp, ArrowBigDown, Equal } from "lucide-react";
 import { formatNormalDate } from "@/helpers";
 
-interface RiskProps {
+type RiskProps = {
   current?: RiesgoPaisActualData;
   previous?: RiesgoPaisAnteriorData;
 }
@@ -11,22 +11,22 @@ interface RiskProps {
 
 const RiesgoPaisCard = ({ current, previous }: RiskProps) => {
 
-  const isEqual = current?.variacion == 0;
+  const isCero = current?.variacion == 0;
   const isDown = current?.tendencia === "baja";
 
-  const TrendIcon = isEqual 
+  const TrendIcon = isCero 
     ? Equal 
     : current?.ultimo
       ? ArrowBigDown 
       : ArrowBigUp;
 
-  const trendColor = isEqual
+  const trendColor = isCero
     ? "text-white"
     : isDown 
       ? "text-[#4ece96]"
       : "text-[#da5858]";
 
-  const iconColor = isEqual
+  const iconColor = isCero
     ? "#ffffff"
     : isDown 
       ? "#58daa2"

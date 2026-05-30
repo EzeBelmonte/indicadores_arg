@@ -85,5 +85,7 @@ export const useMervalSector = () => {
 
     refetchInterval: 60000,
 
+    staleTime: 30000,
+
   });
 };

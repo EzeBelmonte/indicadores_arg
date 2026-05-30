@@ -9,7 +9,7 @@ import { cn } from "@/utils/cn";
 import { formatPrice, formatCompactPrice, percentFormatter } from "@/helpers";
 
 
-interface MervalCardProps {
+type MervalCardProps = {
   data: MervalData;
 }
 

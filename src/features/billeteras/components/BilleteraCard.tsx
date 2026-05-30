@@ -3,7 +3,7 @@ import { Card, Image, CardFooter, Key, Value } from "@/components";
 import { percentFormatter, formatNormalDate, normalizedName } from "@/helpers";
 import { billeteraLogo } from "../constants/billeteraLogo";
 
-interface WalletProps {
+type WalletProps = {
   data: BilleteraData
 }
 

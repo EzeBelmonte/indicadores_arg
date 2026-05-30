@@ -2,7 +2,7 @@ import { Card, CardFooter, Key, Value  } from "@/components";
 import type { SalarioData } from "../types/salario.type";
 import { formatPrice } from "@/helpers";
 
-interface SalarioProps {
+type SalarioProps = {
   data: SalarioData;
 }
 

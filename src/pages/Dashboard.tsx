@@ -2,6 +2,7 @@ import {
   BilleteraSection,
   CanastaSection,
   DolarSection, 
+  EmaeSection,
   IpcSection, 
   JubilacionSection,
   MervalSection,
@@ -43,7 +44,10 @@ const Dashboard = () => {
 
       </div>
 
-      <PobrezaSection />
+      <div className="grid grid-cols-2 gap-x-10">
+        <EmaeSection />
+        <PobrezaSection />
+      </div>
 
       <BilleteraSection />
 

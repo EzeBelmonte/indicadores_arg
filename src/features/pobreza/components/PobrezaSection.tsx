@@ -27,7 +27,7 @@ const PobrezaSection = () => {
   
   return (
 
-    <Section id="pobreza">
+    <Section id="pobreza" className="h-full flex flex-col">
       
       <CardTitleIcon>
 

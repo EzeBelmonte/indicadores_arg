@@ -61,14 +61,14 @@ export const CardTitleSecond = ({ children, className }: Props) => {
 
 export const CardFooter = ({ children, className }: Props) => {
   return (
-    <p 
+    <div 
       className={cn(
         "text-gray-400 text-[0.7rem]",
         className
       )}
     >
       {children}
-    </p>
+    </div>
   );
 };
 

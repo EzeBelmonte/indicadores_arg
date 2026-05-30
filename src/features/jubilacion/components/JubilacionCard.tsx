@@ -3,7 +3,7 @@ import { Card, Key, Value, CardFooter } from "@/components";
 
 import { formatNormalDate, formatPrice } from "@/helpers";
 
-interface JubilacionProps {
+type JubilacionProps = {
   data: JubilacionData;
 }
 

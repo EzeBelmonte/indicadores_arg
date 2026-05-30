@@ -9,7 +9,7 @@ import {
 
 import { DollarKey, DollarValue } from "../typography/DolarTypography";
 
-interface DolarCardProps {
+type DolarCardProps = {
   data: DolarData;
   variant?: "default" | "featured";
 }

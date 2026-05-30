@@ -2,17 +2,17 @@ import { useIPCHistorial } from "../hooks/useIPC";
 import { SameData, CardTitleSecond } from "@/components";
 
 
-interface HistorialItem {
+type HistorialItem = {
   fecha: string;
   valor: number;
 };
 
-interface Anual {
+type Anual = {
   anio: number;
   valor: number;
 }
 
-interface Inter {
+type Inter = {
   fecha: string;
   valor: number;
 }

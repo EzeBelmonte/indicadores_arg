@@ -4,7 +4,7 @@ import { Text } from "../typography/CanastaTypography";
 import { percentFormatter, formatPrice } from "@/helpers";
 
 
-interface CanastaProps {
+type CanastaProps = {
   data: CanastaData;
 }
 

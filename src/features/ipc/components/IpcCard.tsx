@@ -3,7 +3,7 @@ import type { IPCData } from "../types/ipc.type";
 import { IpcActualValue, IpcValue } from "../typography/IpcTypography";
 
 
-interface IpcProps {
+type IpcProps = {
   data: IPCData;
   variant?: "default" | "featured";
   onClick?: () => void;
