@@ -4,7 +4,7 @@ import { apiFetcher } from "@/shared/lib/apiFetcher";
 
 
 // Indicamos cuantos meses quiero ver (1 = un mes, 2 = dos meses, etc...)
-const months = lastMonths(3);
+const months = lastMonths(4);
 
 // Indicamos cuantos años queremos ver (4 = desde la fecha actual hasta 4 años completos atras, etc...)
 // Argly soporta hasta 3 años atras

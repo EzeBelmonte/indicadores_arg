@@ -1,5 +1,5 @@
 import type { VercelRequest, VercelResponse } from "@vercel/node";
-import { walletNames } from "./sources/constants/walletNames";
+import { walletNames } from "./sources/constants/walletNames.js";
 
 
 export default async function handler(
