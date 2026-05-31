@@ -3,14 +3,14 @@ import type { IPCData } from "../types/ipc.type";
 import { IpcActualValue, IpcValue } from "../typography/IpcTypography";
 
 
-type IpcProps = {
+type IPCProps = {
   data: IPCData;
   variant?: "default" | "featured";
   onClick?: () => void;
 }
 
 
-const IpcCard = ({ data, variant = "default", onClick }: IpcProps) => {
+const IpcCard = ({ data, variant = "default", onClick }: IPCProps) => {
 
   const isDefault = variant === "default";
 

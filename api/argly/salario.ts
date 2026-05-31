@@ -3,7 +3,7 @@ import { fetchExternal, sendResponse } from "../sources/utils";
 
 
 export default async function handler(
-  req: VercelRequest,
+  _req: VercelRequest,
   res: VercelResponse
 ) {
   try {

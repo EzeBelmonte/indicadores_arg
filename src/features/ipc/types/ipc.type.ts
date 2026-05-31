@@ -1,4 +1,4 @@
-// types/ipc.ts
+
 export interface IPCData {
   anio: number;
   mes: number;

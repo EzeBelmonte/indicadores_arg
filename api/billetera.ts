@@ -3,7 +3,7 @@ import { walletNames } from "./sources/constants/walletNames";
 
 
 export default async function handler(
-  req: VercelRequest,
+  _req: VercelRequest,
   res: VercelResponse
 ) {
   try {

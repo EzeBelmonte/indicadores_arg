@@ -4,7 +4,7 @@ import { sendResponse } from './sources/utils/sendResponse';
 
 
 export default async function handler(
-  req: VercelRequest,
+  _req: VercelRequest,
   res: VercelResponse
 ) {
 

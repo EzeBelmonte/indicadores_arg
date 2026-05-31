@@ -3,7 +3,7 @@ import * as cheerio from "cheerio";
 
 
 export default async function handler(
-  req: VercelRequest,
+  _req: VercelRequest,
   res: VercelResponse
 ) {
 
