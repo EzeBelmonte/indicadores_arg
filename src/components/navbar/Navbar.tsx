@@ -71,6 +71,7 @@ const Navbar = () => {
           <li><a href="#salario">SMVM</a></li>
           <li><a href="#ripte">RIPTE</a></li>
           <li><a href="#jubilacion">JUBILACIÓN</a></li>
+          <li><a href="#emae">EMAE</a></li>
           <li><a href="#pobreza">POBREZA</a></li>
           <li><a href="#billetera">BILLETERA</a></li>
           <li><a href="#merval">MERVAL</a></li>
