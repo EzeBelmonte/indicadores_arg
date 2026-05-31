@@ -1,5 +1,5 @@
 import type { RiesgoPaisActualData, RiesgoPaisAnteriorData } from "../types/RiesgoPais.type";
-import { Card, CardFooter, Key, Value } from "@/components";
+import { Card, Key, Value } from "@/components";
 import { ArrowBigUp, ArrowBigDown, Equal } from "lucide-react";
 import { formatNormalDate } from "@/helpers";
 
@@ -35,21 +35,19 @@ const RiesgoPaisCard = ({ current, previous }: RiskProps) => {
 
   return (
 
-    <div className="grid grid-cols-2 gap-7 h-28">
+    <div className="flex flex-col gap-2 sm:flex-row lg:gap-4">
 
       {/* Riesgo país actual */}
       <Card 
-        className="flex flex-col gap-4"
         variant="riesgoPais"
       >
-        <div className="flex w-full justify-between items-center">
-
+        <div className="flex justify-between">
           {/* Variación */}
-          <div className="flex flex-col gap-1">
+          <div>
             <Key>VARIACIÓN</Key>
 
             {/* Icono y valor */}
-            <div className="flex items-center gap-2">
+            <div className="flex items-center gap-1">
 
               {/* Icono de la flecha */}
               <TrendIcon
@@ -62,55 +60,45 @@ const RiesgoPaisCard = ({ current, previous }: RiskProps) => {
               <Value className={trendColor}>
                 {current?.variacion}%
               </Value> 
-
             </div>
-
           </div>
 
           {/* Valor */}
-          <div className="flex flex-col gap-1">
-
+          <div>
             <Key>VALOR</Key>
             
             <Value>{current?.ultimo}</Value> 
-
           </div>
         </div>
 
-        <CardFooter className="mt-auto">
+        <p className="footer-date mt-7">
           {current && formatNormalDate(current?.fecha)}
-        </CardFooter>
-
+        </p>
       </Card>
 
       {/* Riesgo país del día anterior */}
-      <Card className="flex flex-col gap-4">
-        <div className="flex justify-between gap-6">
-          <div className="flex flex-col gap-1">
-
+      <Card>
+        <div className="flex justify-between">
+          <div>
             <Key>VARIACIÓN PTS.</Key>
 
             <Value className="text-gray-400">
               {previous?.variacion_puntos}
             </Value>
-
           </div>
 
-          <div className="flex flex-col gap-1">
-
+          <div>
             <Key>CIERRE ANT.</Key>
 
             <Value className="text-gray-400">
               {previous?.ultimo}
             </Value>
-
           </div>
         </div>
 
-        <CardFooter className="mt-auto">
+        <p className="footer-date mt-7">
           ÚLTIMO CIERRE
-        </CardFooter>
-
+        </p>
       </Card>
     </div>
   );

@@ -1,5 +1,5 @@
 import { useEmae } from "../hooks/useEmae";
-import { CardTitleIcon, Section, SectionTitle } from "@/components";
+import { Section, TitleIcon } from "@/components";
 import EmaeCard from "./EmaeCard";
 
 import { Factory } from "lucide-react";
@@ -28,21 +28,19 @@ const EmaeSection = () => {
 
   return (
 
-    <Section id="emae">
+    <Section id="emae" className="h-full flex flex-col">
+        <TitleIcon>
 
-        <CardTitleIcon>
-
-          <SectionTitle>EMAE</SectionTitle>
+          <h1>EMAE</h1>
 
           <Factory 
             strokeWidth={3}
             className="icon-section text-[rgb(11,230,200)]"
           />
 
-        </CardTitleIcon>
+        </TitleIcon>
 
         <EmaeCard data={data} />
-
     </Section>
   
   );

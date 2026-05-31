@@ -1,7 +1,7 @@
 import { useJubilacion } from "../hooks/useJubilacion";
 import { UserRound } from "lucide-react";
 
-import { Section, SectionTitle, CardTitleIcon } from "@/components";
+import { Section, TitleIcon } from "@/components";
 import JubilacionCard from "./JubilacionCard";
 
 
@@ -28,16 +28,16 @@ const JubilacionSection = () => {
 
     <Section id="jubilacion">
 
-      <CardTitleIcon>
+      <TitleIcon>
 
-        <SectionTitle>JUBILACIÓN MÍNIMA</SectionTitle>  
+        <h1>JUBILACIÓN MÍNIMA</h1>  
 
         <UserRound 
           strokeWidth={3}
           className="icon-section text-[rgb(255,255,255)]"
         />
 
-      </CardTitleIcon>
+      </TitleIcon>
 
       <JubilacionCard data={data} />
 

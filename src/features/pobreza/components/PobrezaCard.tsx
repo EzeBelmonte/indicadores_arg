@@ -1,4 +1,4 @@
-import { Card, Key, Value } from "@/components";
+import { Card, Key, Value, Group } from "@/components";
 import { percentFormatter } from "@/helpers";
 import type { PobrezaData } from "../types/pobreza.type";
 
@@ -10,21 +10,18 @@ type PobrezaProps = {
 const PobrezaCard = ({ data }: PobrezaProps) => {
 
   return (
-    
+
     <Card className="flex flex-col h-full gap-2 bg-[rgba(0,0,0,0.2)]">
-
-      <div className="flex justify-between items-baseline gap-4">
-        <Key>HOGARES BAJO LA LÍNEA DE POBREZA</Key>
+      <Group>
+        <Key>HOGARES BAJO LA LÍNEA DE POBREZA:</Key>
         <Value>{data.hogares}%</Value>
-      </div>
+      </Group>
 
-      <div className="flex justify-between items-baseline gap-4">      
-        <Key>POBLACIÓN BAJO LA LÍNEA DE POBREZA</Key>
+      <Group>      
+        <Key>POBLACIÓN BAJO LA LÍNEA DE POBREZA:</Key>
         <Value>{percentFormatter(data.poblacion)}%</Value>
-      </div>
-
+      </Group>
     </Card>
-
   );
 };
 

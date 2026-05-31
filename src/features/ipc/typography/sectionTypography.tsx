@@ -7,28 +7,28 @@ interface Props {
 }
 
 
-export const IpcValue = ({ children, className }: Props) => {
+export const S_Key = ({ children, className }: Props) => {
   return (
-    <p
+    <div
       className={cn(
-        "text-[1.3rem] text-gray-400 font-bold",
+        "font-bold text-[#ffffff] text-[1.3rem]",
         className
       )}
     >
       {children}
-    </p>
+    </div>
   );
 };
 
-export const IpcActualValue = ({ children, className }: Props) => {
+export const S_Value = ({ children, className }: Props) => {
   return (
-    <p
+    <div
       className={cn(
-        "text-[2.5rem] text-[#ffffff] font-bold",
+        "font-bold text-[#ffffff] text-[2rem]",
         className
       )}
     >
       {children}
-    </p>
+    </div>
   );
 };

@@ -84,7 +84,6 @@ export default function Chart({ data, className, paramKey, paramValue, suffix }:
               dataKey={paramValue} 
               fill="rgba(85,26,151,0.8)" 
               barSize={20}
-              //tabIndex={-1}
             >
               {/* Agrega valor a las barras */}
               <LabelList 

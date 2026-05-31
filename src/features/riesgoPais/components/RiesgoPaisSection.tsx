@@ -2,7 +2,7 @@ import { useState } from "react";
 import { useRiesgoPais } from "../hooks/useRiesgoPais";
 import { TriangleAlert } from "lucide-react";
 
-import { Section, SectionTitle, CardTitleIcon, Modal } from "@/components";
+import { Section, TitleIcon, Modal } from "@/components";
 import RiesgoPaisCard from "./RiesgoPaisCard";
 import RiesgoPaisHistorial from "./RiesgoPaisHistorial";
 
@@ -53,16 +53,16 @@ const RiskCountrySection = () => {
         onClick={handleOpenModal}
       >
 
-        <CardTitleIcon>
+        <TitleIcon>
 
-          <SectionTitle>RIESGO PAÍS</SectionTitle>
+          <h1>RIESGO PAÍS</h1>
 
           <TriangleAlert
             strokeWidth={3}
             className="icon-section text-[rgb(247,61,61)]"
           />
 
-        </CardTitleIcon>
+        </TitleIcon>
 
         {/* Riesgo país actual y anterior*/}
         <RiesgoPaisCard

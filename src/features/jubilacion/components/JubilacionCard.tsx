@@ -1,5 +1,5 @@
 import type { JubilacionData } from "../types/jubilacion.type";
-import { Card, Key, Value, CardFooter } from "@/components";
+import { Card, Key, Value } from "@/components";
 
 import { formatNormalDate, formatPrice } from "@/helpers";
 
@@ -19,7 +19,7 @@ const JubilacionCard = ({ data }: JubilacionProps) => {
         <Value>${formatPrice(data.jubilacionMinima)}</Value>
       </div>
 
-      <CardFooter className="mt-auto">{formatNormalDate(data.fecha)}</CardFooter>
+      <p className="footer-date mt-auto">{formatNormalDate(data.fecha)}</p>
 
     </Card>
 

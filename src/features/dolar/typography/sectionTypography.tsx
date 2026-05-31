@@ -7,7 +7,7 @@ interface Props {
 }
 
 
-export const DollarKey = ({ children, className }: Props) => {
+export const S_Key = ({ children, className }: Props) => {
   return (
     <p
       className={cn(
@@ -20,7 +20,7 @@ export const DollarKey = ({ children, className }: Props) => {
   );
 };
 
-export const DollarValue = ({ children, className }: Props) => {
+export const S_Value = ({ children, className }: Props) => {
   return (
     <p
       className={cn(

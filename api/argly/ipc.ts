@@ -24,9 +24,6 @@ export default async function handler(
       searchParams.append("hasta", hasta);
     }
 
-    console.log(desde);
-    console.log(hasta);
-
     const query = searchParams.toString();
 
     const url = `https://api.argly.com.ar/v1/${option}${

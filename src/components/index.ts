@@ -1,3 +1,7 @@
+// Navegación
+export { default as Buttonbar } from "./navbar/Buttonbar";
+export { default as Navbar } from "./navbar/Navbar";
+
 // Componentes UI
 export { default as Card } from "./ui/Card";
 export { default as Section } from "./ui/Section";

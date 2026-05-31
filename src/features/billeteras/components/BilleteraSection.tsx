@@ -2,7 +2,7 @@ import { useBilletera } from "../hooks/useBilletera";
 import { Wallet } from "lucide-react";
 
 import BilleteraCard from "./BilleteraCard";
-import { Section, SectionTitle, CardTitleIcon } from "@/components";
+import { Section, TitleIcon } from "@/components";
 
 
 const BilleteraSection = () => {
@@ -28,24 +28,21 @@ const BilleteraSection = () => {
   return (
 
     <Section id="billetera">
-
-      <CardTitleIcon>
-
-        <SectionTitle>RENDIMIENTO BILLETERAS VIRTUALES</SectionTitle>
+      <TitleIcon>
+        <h1>RENDIMIENTO BILLETERAS VIRTUALES</h1>
       
         <Wallet
           strokeWidth={3}
           className="icon-section text-[rgb(255,255,255)]"
         />
 
-      </CardTitleIcon>
+      </TitleIcon>
 
-      <div className="grid grid-cols-6 gap-7">
+      <div className="grid grid-cols-1 gap-2 sm:grid-cols-3 lg:grid-cols-6">
         {data.map((item) => (
           <BilleteraCard key={item.name} data={item} />
         ))}
       </div>
-
     </Section>
 
   );

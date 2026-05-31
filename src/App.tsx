@@ -1,15 +1,20 @@
 import './App.css'
 import Dashboard from './pages/Dashboard'
-import Navbar from './components/navbar/Navbar'
+import { Buttonbar, Navbar } from './components';
 
 
 function App() {
 
   return (
 
-    <div className='w-full min-h-screen'>
+    <div className="w-full min-h-screen">
+      {/* Navegación para movil/tablet */}
+      <Buttonbar />
 
-      <Navbar /> 
+      {/* Navegación para pc */}
+      <Navbar />
+
+      {/* Contenido */}
       <Dashboard /> 
 
     </div>

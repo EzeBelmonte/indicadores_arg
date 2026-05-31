@@ -1,7 +1,7 @@
 import { useSalario } from "../hooks/useSalario";
 import { Banknote } from "lucide-react";
 
-import { Section, SectionTitle, CardTitleIcon } from "@/components";
+import { Section, TitleIcon } from "@/components";
 import SalarioCard from "./SalarioCard";
 
 
@@ -28,16 +28,16 @@ const SalarioSection = () => {
 
     <Section id="salario" className="h-full flex flex-col">
       
-      <CardTitleIcon>
+      <TitleIcon>
 
-        <SectionTitle>SALARIO MÍNIMO, VITAL Y MOVIL</SectionTitle>
+        <h1>SALARIO MÍNIMO, VITAL Y MOVIL</h1>
 
         <Banknote 
           strokeWidth={3}
           className="icon-section text-[rgb(252,87,211)]"
         />
 
-      </CardTitleIcon>
+      </TitleIcon>
 
       <SalarioCard data={data} />
 

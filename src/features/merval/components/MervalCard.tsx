@@ -1,7 +1,7 @@
 import type { MervalData } from "../types/merval.type";
 
-import { Card, CardTitleSecond } from "@/components";
-import { State, Key, Value, Price } from "../typography/MarvelTypography";
+import { Card, Key, Value, Group } from "@/components";
+import { State, Price } from "../typography/MarvelTypography";
 
 import { marketStateMap } from "../constants/marketState";
 import { cn } from "@/utils/cn";
@@ -25,12 +25,6 @@ const MervalCard = ({ data }: MervalCardProps) => {
   // Obtener signo de la moneda
   const moneda = data.currency === "ARS" ? "$" : "US$"
 
-  // Estilo compartido para cada grupo de datos
-  const group = "grid grid-rows-2";
-
-  // Estilo compartido para los títulos de los datos
-  const marketSubTitle = "grid grid-cols-[1fr_1fr] items-baseline";
-
   return (
 
     <Card className="flex flex-col gap-3 bg-[#053c4d7a]">
@@ -38,7 +32,7 @@ const MervalCard = ({ data }: MervalCardProps) => {
       {/* Nombre y estado */}
       <div className="flex gap-3 items-baseline">
 
-        <CardTitleSecond>{data.shortName}</CardTitleSecond>
+        <h2>{data.shortName}</h2>
 
         <State className={estado.color}>
           {estado.label}
@@ -46,7 +40,7 @@ const MervalCard = ({ data }: MervalCardProps) => {
 
       </div>
 
-      <div className="grid grid-cols-[1fr_1fr] gap-5">
+      <div className="grid grid-cols-1 gap-4">
 
         {/* Precio actual */}
         <div>
@@ -55,9 +49,8 @@ const MervalCard = ({ data }: MervalCardProps) => {
         </div>
 
         {/* Cambio nominal/porcentual */}
-        <div className={group}>
-
-          <div className={marketSubTitle}>
+        <div>
+          <Group>
             <Key>VAR. NOMINAL:</Key> 
             <Value className={cn(
               data.regularMarketChange >= 0 
@@ -67,9 +60,9 @@ const MervalCard = ({ data }: MervalCardProps) => {
             >
               {moneda}{formatPrice(data.regularMarketChange)}
             </Value>
-          </div>
+          </Group>
 
-          <div className={marketSubTitle}>
+          <Group>
             <Key>VAR. PORCEN.:</Key> 
             <Value className={cn(
               data.regularMarketChangePercent >= 0 
@@ -79,72 +72,62 @@ const MervalCard = ({ data }: MervalCardProps) => {
             >
               {percentFormatter(data.regularMarketChangePercent)}%
             </Value>
-          </div>
-
+          </Group>
         </div>
 
         {/* Apertura y cierre */}
-        <div className={group}>
-
-          <div className={marketSubTitle}>
+        <div>
+          <Group>
             <Key>CIERRE ANT.:</Key>
             <Value>{moneda}{formatPrice(data.regularMarketPreviousClose)}</Value>
-          </div>
+          </Group>
 
-          <div className={marketSubTitle}>
+          <Group>
             <Key>APERTURA:</Key>
             <Value>{moneda}{formatPrice(data.regularMarketOpen)}</Value>
-          </div>
-
+          </Group>
         </div>
 
         {/* Mínimo y máximo */}
-        <div className={group}>
-
-          <div className={marketSubTitle}>
+        <div>
+          <Group>
             <Key>MÍN. (DÍA):</Key>
             <Value>{moneda}{formatPrice(data.regularMarketDayLow)}</Value>
-          </div>
+          </Group>
 
-          <div className={marketSubTitle}>
+          <Group>
             <Key>MÁX. (DÍA):</Key>
             <Value>{moneda}{formatPrice(data.regularMarketDayHigh)}</Value>
-          </div>
-
+          </Group>
         </div>
 
         {/* Mínimo y maximo en 52 semana */}
-        <div className={group}>
-
-          <div className={marketSubTitle}>
+        <div>
+          <Group>
             <Key>MÍN. (MAX. 52 SEM.):</Key>
             <Value>{moneda}{formatPrice(data.fiftyTwoWeekLow)}</Value>
-          </div>
+          </Group>
 
-          <div className={marketSubTitle}>
+          <Group>
             <Key>MÁX. (MAX. 52 SEM.):</Key>
             <Value>{moneda}{formatPrice(data.fiftyTwoWeekHigh)}</Value>
-          </div>
-
+          </Group>
         </div>
 
         {/* Volumen y capitalización */}
-        <div className={group}>
+        <div>
 
-          <div className={marketSubTitle}>
+          <Group>
             <Key>VOL. OPERADO:</Key>
             <Value>{data.regularMarketVolume}</Value>
-          </div>
+          </Group>
           
-          <div className={marketSubTitle}>
+          <Group>
             <Key>CAP. BURSÁTIL:</Key>
             <Value className="text-[#e9ab02]">{moneda}{formatCompactPrice(data.marketCap)}</Value>
-          </div>
-
+          </Group>
         </div>
-
       </div>
-
     </Card>
 
   );

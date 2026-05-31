@@ -1,4 +1,4 @@
-import { Card, CardFooter, Key, Value  } from "@/components";
+import { Card, Key, Value  } from "@/components";
 import type { SalarioData } from "../types/salario.type";
 import { formatPrice } from "@/helpers";
 
@@ -15,9 +15,7 @@ const SalarioCard = ({ data }: SalarioProps) => {
   return (
 
     <Card className="flex flex-col flex-1 bg-[rgba(192,32,152,0.2)]">
-
       <div className="flex flex-col gap-1">
-
         <div className={group}>
           <Key>SALARIO MENSUAL:</Key>
           <Value>${formatPrice(data.smvm)}</Value>
@@ -35,16 +33,7 @@ const SalarioCard = ({ data }: SalarioProps) => {
 
       </div>
 
-      <div className="mt-auto">
-
-        <div className="flex gap-2">
-
-          <p className="text-[0.7rem]">VIGENTE DESDE:</p>
-          <CardFooter> {data.vigente_desde}</CardFooter>
-
-        </div>
-        
-      </div>
+      <p className="footer-date sm:mt-auto"> {data.vigente_desde}</p>
     </Card>
 
   );

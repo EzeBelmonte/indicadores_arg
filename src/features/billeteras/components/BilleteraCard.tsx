@@ -1,5 +1,5 @@
 import type { BilleteraData } from "../types/billetera.type";
-import { Card, Image, CardFooter, Key, Value } from "@/components";
+import { Card, Image, Key, Value } from "@/components";
 import { percentFormatter, formatNormalDate, normalizedName } from "@/helpers";
 import { billeteraLogo } from "../constants/billeteraLogo";
 
@@ -17,8 +17,8 @@ const BilleteraCard = ({ data }: WalletProps) => {
   const logo = billeteraLogo[walletKey]?.logo;
 
   return (
+
     <Card className="flex flex-col gap-5 items-center bg-[rgba(255,255,255,0.1)]">
-      
       {logo && 
         <Image 
           src={logo} 
@@ -33,8 +33,7 @@ const BilleteraCard = ({ data }: WalletProps) => {
         <Value>{percentFormatter(data.rate)}%</Value>
       </div>
 
-      <CardFooter className="mt-auto">{formatNormalDate(data.updatedAt)}</CardFooter>
-
+      <p className="footer-date mt-3 sm:mt-7">{formatNormalDate(data.updatedAt)}</p>
     </Card>
   );
 };

@@ -1,4 +1,4 @@
-import { Card, Key, Value, CardFooter } from "@/components";
+import { Card, Key, Value, Group } from "@/components";
 import type { EMAEData } from "../types/emae.types";
 import { formatNormalDate, percentFormatter } from "@/helpers";
 
@@ -8,7 +8,6 @@ type EMAEProps = {
 
 
 const EmaeCard = ({ data }: EMAEProps) => {
-
   // Guardamos si dio 0 la variable respecto al mes anterior
   const isMCero = data.monthly == 0;
   // Guardamos si dio 0 la variable interanual
@@ -38,28 +37,24 @@ const EmaeCard = ({ data }: EMAEProps) => {
   return (
 
     <Card className="bg-[rgba(8,75,66,0.5)]">
-
-      <div className="flex justify-between">
-        <Key>VARIACIÓN RESPECTO AL MES ANTERIOR</Key>
+      <Group>
+        <Key>VARIACIÓN RESPECTO AL MES ANTERIOR:</Key>
         <Value className={colorMonthly}>{percentFormatter(data.monthly)}</Value>
-      </div>
+      </Group>
 
-      <div className="flex justify-between">
-        <Key>INTERANUAL</Key>
+      <Group>
+        <Key>INTERANUAL:</Key>
         <Value className={colorYearly}>{percentFormatter(data.yearly)}</Value>
-      </div>
+      </Group>
 
-      <div className="flex justify-between">
-        <Key>TENDENCIA-CICLO</Key>
+      <Group>
+        <Key>TENDENCIA-CICLO:</Key>
         <Value className={colorCycle}>{percentFormatter(data.cycleTrend)}</Value>
-      </div>
+      </Group>
 
-      <CardFooter className="flex gap-1 mt-10">
-        <p>FECHA:</p>
-        <p>{formatNormalDate(data.date)}</p>
-      </CardFooter>
-
-      
+      <p className="footer-date md:mt-7">
+        {formatNormalDate(data.date)}
+      </p>
     </Card>
 
   );

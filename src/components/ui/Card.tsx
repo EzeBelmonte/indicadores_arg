@@ -23,10 +23,8 @@ const Card = ({ children, onClick, className, variant = "default", backgroundIco
     <div 
       onClick={onClick}
       className={cn(
-        `relative overflow-hidden card-hover text-[#ffffffce] rounded p-3
-          backdrop-blur-xl
-         border border-[#ffffff3b]
-        `,
+        `relative w-full overflow-hidden card-hover text-[#ffffffce] rounded p-3 
+        backdrop-blur-xl border border-[#ffffff3b]`,
         variants[variant],
         className
       )}

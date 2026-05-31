@@ -1,7 +1,7 @@
 import { useDolar } from "../hooks/useDolar";
 import DolarCard from "./DolarCard";
 
-import { Section, SectionTitle, CardTitleIcon } from "@/components";
+import { Section, TitleIcon } from "@/components";
 import { DollarSign } from "lucide-react";
 
 
@@ -30,27 +30,28 @@ const DolarSection = () => {
 
   return (
 
-    <Section id="dolar">
+    <Section id="dolar" className="w-full">
 
-      <CardTitleIcon>
+      <TitleIcon>
 
-        <SectionTitle>COTIZACIÓN DEL DÓLAR</SectionTitle>
+        <h1>COTIZACIÓN DEL DÓLAR</h1>
 
         <DollarSign
           strokeWidth={3}
           className="icon-section text-[rgb(11,168,89)]"
         />
 
-      </CardTitleIcon>
+      </TitleIcon>
 
-      <div className="grid grid-cols-[1.1fr_2.6fr] gap-7">
+      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-7">
 
         <DolarCard 
           data={oficial}
           variant="featured"
+         
         />
 
-        <div className="grid grid-cols-3 grid-rows-2 gap-7">
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 md:col-span-3 gap-7 ">
 
           {others.map((d) => (
             

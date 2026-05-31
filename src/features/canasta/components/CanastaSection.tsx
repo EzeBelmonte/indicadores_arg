@@ -2,7 +2,7 @@ import { useCanasta } from "../hooks/useCanasta";
 import { ShoppingBasket } from "lucide-react";
 
 import CanastaCard from "./CanastaCard";
-import { Section, SectionTitle, CardTitleIcon } from "@/components";
+import { Section, TitleIcon } from "@/components";
 
 
 const CanastaSection = () => {
@@ -29,16 +29,16 @@ const CanastaSection = () => {
 
     <Section id="canasta">
       
-      <CardTitleIcon>
+      <TitleIcon>
 
-        <SectionTitle>CANASTA BÁSICA</SectionTitle>
+        <h1>CANASTA BÁSICA</h1>
 
         <ShoppingBasket
           strokeWidth={3}
           className="icon-section text-[rgb(247,245,103)]"
         />
 
-      </CardTitleIcon>
+      </TitleIcon>
 
       <CanastaCard data={data} />
 

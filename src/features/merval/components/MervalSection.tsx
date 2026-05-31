@@ -2,7 +2,7 @@ import { useState } from "react";
 import { useMerval } from "../hooks/useMerval";
 import { TrendingUp } from "lucide-react";
 
-import { Section, SectionTitle, CardTitleIcon, Modal } from "@/components";
+import { Section, TitleIcon, Modal } from "@/components";
 import MervalCard from "./MervalCard";
 import MervalSector from "./MervalSector";
 
@@ -45,18 +45,18 @@ const MervalSection = () => {
         onClick={handleOpenModal}
       >
 
-        <CardTitleIcon>
+        <TitleIcon>
           
-          <SectionTitle>MERVAL</SectionTitle>
+          <h1>MERVAL</h1>
 
           <TrendingUp
             strokeWidth={3}
             className="icon-section text-[rgb(60,255,0)]"
           />
 
-        </CardTitleIcon>
+        </TitleIcon>
         
-        <div className="grid grid-cols-2 gap-7">
+        <div className="grid grid-cols-1 gap-2 sm:grid-cols-2 sm:gap-4">
 
           {data.map((item) => (
             <MervalCard key={item.symbol} data={item} />

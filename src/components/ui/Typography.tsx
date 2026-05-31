@@ -7,33 +7,7 @@ interface Props {
 }
 
 
-export const SectionTitle = ({ children, className }: Props) => {
-  return (
-    <div
-      className={cn(
-        "text-2xl text-[#ffffff] font-bold",
-        className
-      )}
-    >
-      {children}
-    </div>
-  );
-};
-
-export const CardTitle = ({ children, className }: Props) => {
-  return (
-    <div
-      className={cn(
-        "font-bold text-[#ffffff] text-[1.3rem]",
-        className
-      )}
-    >
-      {children}
-    </div>
-  );
-};
-
-export const CardTitleIcon = ({ children, className }: Props) => {
+export const TitleIcon = ({ children, className }: Props) => {
   return (
     <div
       className={cn(
@@ -46,29 +20,29 @@ export const CardTitleIcon = ({ children, className }: Props) => {
   );
 };
 
-export const CardTitleSecond = ({ children, className }: Props) => {
+export const Key = ({ children, className }: Props) => {
   return (
-    <div
+    <p
       className={cn(
-        "font-bold text-[#ffffff] text-[1.1rem]",
+        "font-semibold text-[#d8d8d8] text-[0.75rem] sm:text-[0.9rem]",
         className
       )}
     >
       {children}
-    </div>
+    </p>
   );
 };
 
-export const CardFooter = ({ children, className }: Props) => {
+export const Value = ({ children, className }: Props) => {
   return (
-    <div 
+    <p
       className={cn(
-        "text-gray-400 text-[0.7rem]",
+        "font-bold text-[#ffffff] text-[0.8rem] sm:text-[1.05rem] ",
         className
       )}
     >
       {children}
-    </div>
+    </p>
   );
 };
 
@@ -85,37 +59,12 @@ export const ButtonHistorial = ({ children, className }: Props) => {
   );
 };
 
-export const Key = ({ children, className }: Props) => {
-  return (
-    <p
-      className={cn(
-        "font-semibold text-[0.9rem] text-[#d8d8d8]",
-        className
-      )}
-    >
-      {children}
-    </p>
-  );
-};
-
-export const Value = ({ children, className }: Props) => {
-  return (
-    <p
-      className={cn(
-        "text-[1.05rem] font-bold text-[#ffffff]",
-        className
-      )}
-    >
-      {children}
-    </p>
-  );
-};
 
 export const Group = ({ children, className }: Props) => {
   return(
     <div
       className={cn(
-        "flex justify-between items-baseline gap-2",
+        "flex justify-between items-end sm:items-baseline gap-2",
         className
       )}
     >

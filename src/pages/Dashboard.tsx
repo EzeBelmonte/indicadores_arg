@@ -1,39 +1,44 @@
 import { 
-  BilleteraSection,
-  CanastaSection,
-  DolarSection, 
-  EmaeSection,
-  IpcSection, 
-  JubilacionSection,
-  MervalSection,
-  PobrezaSection,
   PresentacionSection,
+  DolarSection, 
+  
+  IpcSection, 
   RiesgoPaisSection,
-  RipteSection,
+  
+  CanastaSection,
+
   SalarioSection,
+  RipteSection,
+  JubilacionSection,
+
+  EmaeSection,
+  PobrezaSection,
+
+  BilleteraSection,
+ 
+  MervalSection,
 } from "@/features";
 
 
 const Dashboard = () => {
 
   return (
-
-    <main className="max-w-7xl mx-auto flex flex-col gap-10 px-4 py-6">
-
+    <main className="max-w-7xl mx-auto flex flex-col gap-10 px-4 py-12 md:py-6">
       <PresentacionSection />
 
+      <div>
       <DolarSection />
+      </div>
 
-      <div className="grid grid-cols-[1fr_1fr] gap-10">
+      <div className="grid grid-cols-1 gap-x-10 md:grid-cols-2">
         <IpcSection />
         <RiesgoPaisSection />
       </div>
 
       <CanastaSection />
 
-      <div className="grid grid-cols-2 gap-x-10">
-        
-        <div className="row-span-2">
+      <div className="grid grid-cols-1 gap-10 sm:grid-cols-2">
+        <div>
           <SalarioSection />
         </div>
 
@@ -41,10 +46,10 @@ const Dashboard = () => {
           <RipteSection />
           <JubilacionSection />
         </div>
-
       </div>
 
-      <div className="grid grid-cols-2 gap-x-10">
+      
+      <div className="grid grid-cols-1 gap-10 sm:grid-cols-2">
         <EmaeSection />
         <PobrezaSection />
       </div>

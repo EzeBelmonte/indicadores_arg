@@ -1,7 +1,7 @@
 import { usePobreza } from "../hooks/usePobreza";
 import { BanknoteArrowDown } from "lucide-react";
 
-import { Section, SectionTitle, CardTitleIcon } from "@/components";
+import { Section, TitleIcon } from "@/components";
 import PobrezaCard from "./PobrezaCard";
 
 
@@ -29,16 +29,16 @@ const PobrezaSection = () => {
 
     <Section id="pobreza" className="h-full flex flex-col">
       
-      <CardTitleIcon>
+      <TitleIcon>
 
-        <SectionTitle>POBREZA</SectionTitle>
+        <h1>POBREZA</h1>
 
         <BanknoteArrowDown
           strokeWidth={3}
           className="icon-section text-[rgb(161,161,161)]"
         />
       
-      </CardTitleIcon>
+      </TitleIcon>
 
       <PobrezaCard data={data} />
 

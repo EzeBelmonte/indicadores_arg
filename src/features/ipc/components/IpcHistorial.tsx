@@ -1,5 +1,5 @@
 import { useIPCHistorial } from "../hooks/useIPC";
-import { SameData, CardTitleSecond } from "@/components";
+import { SameData } from "@/components";
 
 
 type HistorialItem = {
@@ -104,7 +104,7 @@ const IpcHistorial = () => {
       {/* Gráfico del historial */}
       <div className={grapContainer}>
         
-        <CardTitleSecond className="mb-4">HISTORIAL</CardTitleSecond>
+        <h3 className="mb-4">HISTORIAL</h3>
         <SameData
           paramKey="fecha"
           paramValue="valor"
@@ -117,7 +117,7 @@ const IpcHistorial = () => {
       {/* Gráfico del interanual */}
       <div className={grapContainer}>
         
-        <CardTitleSecond className="mb-4">INTERANUAL</CardTitleSecond>
+        <h3 className="mb-4">INTERANUAL</h3>
         <SameData 
           paramKey="fecha" 
           paramValue="valor" 
@@ -130,7 +130,7 @@ const IpcHistorial = () => {
       {/* Gráfico del anual */}
       <div className={grapContainer}>
         
-        <CardTitleSecond className="mb-4">ANUAL</CardTitleSecond>
+        <h3 className="mb-4">ANUAL</h3>
         <SameData 
           paramKey="anio" 
           paramValue="valor"

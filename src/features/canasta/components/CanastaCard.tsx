@@ -1,5 +1,5 @@
 import type { CanastaData } from "../types/canasta.type";
-import { Card, CardTitle, CardTitleSecond, Key, Value, Group } from "@/components";
+import { Card, Key, Value, Group } from "@/components";
 import { Text } from "../typography/CanastaTypography";
 import { percentFormatter, formatPrice } from "@/helpers";
 
@@ -23,12 +23,12 @@ const CanastaCard = ({ data }: CanastaProps) => {
 
       </div>
 
-      <div className="grid grid-cols-2 gap-6">
+      <div className="grid grid-cols-1 gap-2 md:grid-cols-2 md:gap-4">
 
         {/* Datos de canasta básica alimentaria */}
         <Card className="bg-[rgba(208,255,0,0.2)]">
 
-          <CardTitle className="mb-2">CANASTA BÁSICA ALIMENTARIA</CardTitle>
+          <h2 className="mb-2">CANASTA BÁSICA ALIMENTARIA</h2>
 
           <Group>
             <Key>VARIACIÓN MENSUAL:</Key>
@@ -52,7 +52,7 @@ const CanastaCard = ({ data }: CanastaProps) => {
 
           <br/>
 
-          <CardTitleSecond className="mb-2">HOGARES</CardTitleSecond>
+          <h3 className="mb-2">HOGARES</h3>
           
           {Object.entries(data.cba.hogares).map(([key, hogar]) => (
             <Group key={key}>
@@ -66,7 +66,7 @@ const CanastaCard = ({ data }: CanastaProps) => {
         {/* Datos de canasta básica total */}
         <Card className="bg-[rgba(255,187,0,0.2)]">
 
-          <CardTitle className="mb-2">CANASTA BÁSICA TOTAL</CardTitle>
+          <h2 className="mb-2">CANASTA BÁSICA TOTAL</h2>
 
           <Group>
             <Key>VARIACIÓN MENSUAL:</Key>
@@ -90,7 +90,7 @@ const CanastaCard = ({ data }: CanastaProps) => {
 
           <br/>
 
-          <CardTitleSecond className="mb-2">HOGARES</CardTitleSecond>
+          <h3 className="mb-2">HOGARES</h3>
           
           {Object.entries(data.cbt.hogares).map(([key, hogar]) => (
             <Group key={key}>

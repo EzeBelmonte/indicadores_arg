@@ -1,5 +1,5 @@
 import { useRiesgoPaisHistorial } from "../hooks/useRiesgoPais";
-import { SameData, CardTitleSecond } from "@/components";
+import { SameData } from "@/components";
 import type { RiesgoPaisHistorialData } from "../types/RiesgoPais.type";
 
 
@@ -40,7 +40,7 @@ const RiesgoPaisHistorial = () => {
       {/* Gráfico del historial */}
       <div className="bg-[rgba(255,255,255,0.03)] rounded px-3 py-5">
         
-        <CardTitleSecond className="mb-4">HISTORIAL</CardTitleSecond>
+        <h3 className="mb-4">HISTORIAL</h3>
 
         <SameData 
           paramKey="fecha" 

@@ -1,5 +1,5 @@
 import type { RipteData } from "../types/ripte.type";
-import { Card, Key, Value, CardFooter } from "@/components";
+import { Card, Key, Value } from "@/components";
 
 import { formatNormalDate, formatPrice } from "@/helpers";
 
@@ -19,7 +19,7 @@ const RipteCard = ({ data }: RipteProps) => {
         <Value>${formatPrice(data.value)}</Value>
       </div>
 
-      <CardFooter className="mt-auto">{formatNormalDate(data.fecha)}</CardFooter>
+      <p className="footer-date mt-auto">{formatNormalDate(data.fecha)}</p>
 
     </Card>
   );

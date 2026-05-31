@@ -2,7 +2,7 @@ import { useState } from "react";
 import { useIPC } from "../hooks/useIPC";
 import { Store } from "lucide-react";
 
-import { Section, SectionTitle, CardTitleIcon, Modal } from "@/components";
+import { Section, TitleIcon, Modal } from "@/components";
 import IpcCard from "./IpcCard";
 import IpcHistorial from "./IpcHistorial";
 
@@ -48,18 +48,18 @@ const IpcSection = () => {
         onClick={handleOpenModal}
       >
 
-        <CardTitleIcon>
+        <TitleIcon>
 
-          <SectionTitle>INFLACIÓN MENSUAL</SectionTitle>
+          <h1>INFLACIÓN MENSUAL</h1>
 
           <Store
             strokeWidth={3}
             className="icon-section text-[rgb(174,109,248)]"
           />
 
-        </CardTitleIcon>
+        </TitleIcon>
         
-        <div className="flex gap-7 items-end">
+        <div className="grid grid-cols-1 items-end gap-2 sm:grid-cols-4 lg:gap-4">
 
           {others.map((i) => (
             <div className="flex-1" key={i.nombre_mes}>
@@ -67,7 +67,7 @@ const IpcSection = () => {
             </div>
           ))}
 
-          <div className="flex-[1.3]">
+          <div>
             <IpcCard data={ipc} variant="featured" />
           </div>
 
