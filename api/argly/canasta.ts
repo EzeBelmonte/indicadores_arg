@@ -1,5 +1,6 @@
 import type { VercelRequest, VercelResponse } from '@vercel/node';
-import { fetchExternal, sendResponse } from "../sources/utils";
+import { fetchExternal } from '../sources/utils/fetchExternal.js';
+import { sendResponse } from '../sources/utils/sendResponse.js';
 
 
 export default async function handler(

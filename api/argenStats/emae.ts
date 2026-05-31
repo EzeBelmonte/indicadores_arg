@@ -1,5 +1,5 @@
 import type { VercelRequest, VercelResponse } from '@vercel/node';
-import { fetchExternal } from "../sources/utils";
+import { fetchExternal } from '../sources/utils/fetchExternal.js';
 
 interface EMAEResponse {
   success: boolean;
