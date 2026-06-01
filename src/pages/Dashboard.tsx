@@ -1,21 +1,10 @@
 import { 
-  PresentacionSection,
-  DolarSection, 
-  
-  IpcSection, 
-  RiesgoPaisSection,
-  
+  PresentacionSection, DolarSection, 
+  IpcSection, RiesgoPaisSection,
   CanastaSection,
-
-  SalarioSection,
-  RipteSection,
-  JubilacionSection,
-
-  EmaeSection,
-  PobrezaSection,
-
+  SalarioSection, RipteSection, JubilacionSection,
+  EmaeSection, PobrezaSection,
   BilleteraSection,
- 
   MervalSection,
 } from "@/features";
 
@@ -57,7 +46,6 @@ const Dashboard = () => {
       <BilleteraSection />
 
       <MervalSection />
-
     </main>
 
   )

@@ -20,7 +20,7 @@ export const State = ({ children, className }: Props) => {
   );
 };
 
-export const Price = ({ children, className }: Props) => {
+export const S_Value = ({ children, className }: Props) => {
   return (
     <h3
       className={cn(

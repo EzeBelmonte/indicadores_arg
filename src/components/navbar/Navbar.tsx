@@ -30,7 +30,7 @@ const Navbar = () => {
     <motion.header
 
     animate={{
-      height: isScrolled ? 60 : 76,
+      height: isScrolled ? 55 : 70,
       backgroundColor: "rgb(50,51,53)",
       color: "rgb(255,255,255)",
     }}
@@ -55,7 +55,7 @@ const Navbar = () => {
           />
         </a>
 
-        <ul className="flex font-bold text-[0.8rem] gap-3 py-4 md:gap-6">
+        <ul className="flex font-semibold text-[0.8rem] gap-3 py-4 md:gap-6">
           {navItems.map((item) => (
             <li key={item.href} className="link-underline">
               <a href={item.href}>

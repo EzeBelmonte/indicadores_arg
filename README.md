@@ -1,73 +1,132 @@
-# React + TypeScript + Vite
+# 🇦🇷 Indicadores Económicos Argentina
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+![Vista principal](./screenshots/01.png)
 
-Currently, two official plugins are available:
+Aplicación web desarrollada con React y TypeScript para visualizar distintos indicadores económicos de Argentina en un único lugar.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+Este proyecto fue creado con fines educativos y de aprendizaje, con el objetivo de practicar desarrollo frontend, consumo de APIs, visualización de datos y despliegue de aplicaciones web.
 
-## React Compiler
+## 📸 Capturas
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+<p align="center">
+  <img src="./screenshots/02.png" width="45%" />
+  <img src="./screenshots/03.png" width="45%" />
+</p>
 
-## Expanding the ESLint configuration
+<p align="center">
+  <img src="./screenshots/04.png" width="45%" />
+</p>
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+## 📊 Indicadores disponibles
 
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+Actualmente la aplicación muestra información como:
 
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
+* Cotizaciones del dólar
+* Inflación
+* Riesgo País
+* Canasta Básica
+* Salario Mínimo, Vital y Móvil
+* RIPTE
+* Jubilación mínima
+* Índice de pobreza
+* Rendimientos de billeteras virtuales
+* Índice Merval
+* EMAE (Estimador Mensual de Actividad Económica)
+* Acciones argentinas
 
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+## 🚀 Tecnologías utilizadas
+
+### Frontend
+
+* React
+* TypeScript
+* Vite
+* Tailwind CSS
+* TanStack Query
+* Recharts
+* Framer Motion
+* Lucide React
+
+### Backend y despliegue
+
+* Node.js
+* Vercel
+
+## 📦 Librerías principales
+
+* @tanstack/react-query
+* recharts
+* framer-motion
+* lucide-react
+* cheerio
+* clsx
+* tailwind-merge
+* yahoo-finance2
+
+## 🔗 Fuentes de datos
+
+Los datos son obtenidos desde distintas APIs y fuentes públicas:
+
+* ArgenStats
+* Argly
+* Yahoo Finance
+* API Datos
+* Dólar API
+* datos.gob.ar
+* INDEC
+
+Cada fuente mantiene sus propios tiempos de actualización y disponibilidad.
+
+## ⚠️ Descargo de responsabilidad
+
+La información mostrada tiene fines exclusivamente informativos y educativos.
+
+Este proyecto no constituye asesoramiento financiero, económico ni de inversión. Los datos pueden contener demoras, errores o diferencias respecto de las fuentes oficiales.
+
+## 🛠️ Instalación local
+
+Clonar el repositorio:
+
+```bash
+git clone <url-del-repositorio>
 ```
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+Ingresar al proyecto:
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
-
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+```bash
+cd nombre-del-proyecto
 ```
+
+Instalar dependencias:
+
+```bash
+npm install
+```
+
+Iniciar el entorno de desarrollo:
+
+```bash
+npm run dev
+```
+
+## 🎯 Objetivos del proyecto
+
+Este proyecto fue realizado para practicar:
+
+* Arquitectura de aplicaciones React
+* TypeScript
+* Consumo de APIs
+* Manejo de estado asíncrono con React Query
+* Visualización de datos y gráficos
+* Responsive Design
+* Despliegue en Vercel
+
+## 🚧 Proyecto en evolución
+
+Este es un proyecto personal que utilizo para practicar desarrollo web.
+
+Seguiré agregando nuevos indicadores, visualizaciones y mejoras técnicas a medida que encuentre nuevas ideas o aprenda mejores formas de implementarlas.
+
+## 📄 Licencia
+
+Proyecto personal desarrollado con fines educativos.

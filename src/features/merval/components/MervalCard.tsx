@@ -1,7 +1,7 @@
 import type { MervalData } from "../types/merval.type";
 
 import { Card, Key, Value, Group } from "@/components";
-import { State, Price } from "../typography/MarvelTypography";
+import { State, S_Value } from "../typography/sectionTypography";
 
 import { marketStateMap } from "../constants/marketState";
 import { cn } from "@/utils/cn";
@@ -45,7 +45,7 @@ const MervalCard = ({ data }: MervalCardProps) => {
         {/* Precio actual */}
         <div>
           <Key>PRECIO ACT.:</Key> 
-          <Price className="text-[#4ece96]">{moneda}{formatPrice(data.regularMarketPrice)}</Price> 
+          <S_Value className="text-[#4ece96]">{moneda}{formatPrice(data.regularMarketPrice)}</S_Value> 
         </div>
 
         {/* Cambio nominal/porcentual */}

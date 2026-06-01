@@ -1,6 +1,6 @@
 import './App.css'
 import Dashboard from './pages/Dashboard'
-import { Buttonbar, Navbar } from './components';
+import { Buttonbar, Footer, Navbar } from './components';
 
 
 function App() {
@@ -17,6 +17,8 @@ function App() {
       {/* Contenido */}
       <Dashboard /> 
 
+      {/* Footer */}
+      <Footer />
     </div>
 
   )

@@ -9,6 +9,9 @@ export { default as Button } from "./ui/Button";
 export { default as Image } from "./ui/Image";
 export { default as Modal } from "./ui/Modal";
 
+// Layout
+export { default as Footer } from "./layout/Footer";
+
 // Componentes de tipografía
 export * from "./ui/Typography";
 
