@@ -88,13 +88,13 @@ Este proyecto no constituye asesoramiento financiero, económico ni de inversió
 Clonar el repositorio:
 
 ```bash
-git clone <url-del-repositorio>
+git clone https://github.com/EzeBelmonte/indicadores_arg.git
 ```
 
 Ingresar al proyecto:
 
 ```bash
-cd nombre-del-proyecto
+cd indicadores_arg
 ```
 
 Instalar dependencias:
@@ -108,6 +108,16 @@ Iniciar el entorno de desarrollo:
 ```bash
 npm run dev
 ```
+
+Generar versión de producción:
+
+```bash
+npm run build
+```
+
+## 🌐 Demo
+
+🔗 [Ver aplicación en línea](https://indicadoresarg.vercel.app/)
 
 ## 🎯 Objetivos del proyecto
 
@@ -126,6 +136,14 @@ Este proyecto fue realizado para practicar:
 Este es un proyecto personal que utilizo para practicar desarrollo web.
 
 Seguiré agregando nuevos indicadores, visualizaciones y mejoras técnicas a medida que encuentre nuevas ideas o aprenda mejores formas de implementarlas.
+
+## 👨‍💻 Autor
+
+Desarrollado por Ezequiel Belmonte.
+
+🔗 [GitHub](https://github.com/EzeBelmonte)
+
+💼 [LinkedIn](https://www.linkedin.com/in/ezequiel-belmonte/)
 
 ## 📄 Licencia
 
