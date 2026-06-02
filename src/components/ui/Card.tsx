@@ -14,7 +14,7 @@ const variants = {
   default: "", //bg-[#1a1a1a]
   dollar: "bg-[rgba(11,168,89,0.2)]",
   ipc: "bg-[rgba(85,26,151,0.4)]",
-  riesgoPais: "bg-[rgba(214,32,32,0.5)]",
+  riesgoPais: "bg-[rgba(63,96,185,0.5)]",
 }
 
 
