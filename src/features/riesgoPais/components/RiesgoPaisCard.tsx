@@ -17,8 +17,8 @@ const RiesgoPaisCard = ({ current, previous }: RiskProps) => {
   const TrendIcon = isCero 
     ? Equal 
     : current?.ultimo
-      ? ArrowBigDown 
-      : ArrowBigUp;
+      ? ArrowBigUp  
+      : ArrowBigDown;
 
   const trendColor = isCero
     ? "text-white"
