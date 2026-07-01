@@ -31,7 +31,7 @@ const IpcSection = () => {
 
   const ipc = data[data.length - 1];
   const others = data.slice(0, -1);
-
+  
   // Abrir el modal
   const handleOpenModal = () => {
     setIsModalOpen(true);
@@ -59,7 +59,7 @@ const IpcSection = () => {
 
         </TitleIcon>
         
-        <div className="grid grid-cols-1 items-end gap-2 sm:grid-cols-4 lg:gap-4">
+        <div className="grid grid-cols-1 items-end gap-2 sm:grid-cols-3 lg:gap-4">
 
           {others.map((i) => (
             <div className="flex-1" key={i.nombre_mes}>
@@ -68,6 +68,7 @@ const IpcSection = () => {
           ))}
 
           <div>
+            
             <IpcCard data={ipc} variant="featured" />
           </div>
 
